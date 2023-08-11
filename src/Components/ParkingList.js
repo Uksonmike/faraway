@@ -5,14 +5,14 @@ export default function ParkingList() {
   const initialItems = [
     { id: 1, description: "Passports", quantity: 2, packed: false },
     { id: 2, description: "Socks", quantity: 12, packed: false },
-    { id: 2, description: "Charger", quantity: 5, packed: true },
+    { id: 3, description: "Charger", quantity: 5, packed: true },
   ];
 
   return (
     <div className="list">
       <ul>
         {initialItems.map((items) => (
-          <Item item={items} />
+          <Item key={items.id} item={items} />
         ))}
       </ul>
     </div>
