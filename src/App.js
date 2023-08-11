@@ -1,8 +1,17 @@
-import './App.css';
+import React from "react";
+import Form from "./Components/Form";
+import Logo from "./Components/Logo";
+import ParkingList from "./Components/ParkingList";
+import Stats from "./Components/Stats";
 
 function App() {
   return (
-    <div></div>
+    <div>
+      <Logo/>
+      <Form/>
+      <ParkingList/>
+      <Stats/>
+    </div>
   );
 }
 
