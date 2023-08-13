@@ -6,7 +6,7 @@ import Stats from "./Components/Stats";
 
 function App() {
   const [items, setItems] = useState([]);
-
+  
   const handleAddItems = (item) => {
     setItems((items) => [...items, item]);
   };
@@ -23,6 +23,11 @@ function App() {
     );
   };
 
+  const clearItems = () => {
+    const confirm = window.confirm("Delete all items?")
+    if (confirm) setItems([])
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -31,8 +36,9 @@ function App() {
         items={items}
         onDeleteItems={handleDeleteItems}
         onToggleItems={handleToggleItems}
+        clearItems={clearItems}
       />
-      <Stats />
+      <Stats items={items}/>
     </div>
   );
 }
