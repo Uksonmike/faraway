@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Form() {
+export default function Form({onAddItems}) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -10,12 +10,17 @@ export default function Form() {
     if (!description) {
       return alert(`What's the ${quantity} items you want to carry?`)
     };
+
+    // create a new task object
     const newItem = {
       id: Date.now(),
       description,
       quantity,
       packed: false,
     };
+
+    // add the new item into a new array
+    onAddItems(newItem)
     // console.log(newItem);
     setDescription("")
     setQuantity(1)
